@@ -1,8 +1,8 @@
 package com.linkedlist.MyNode;
 
-public class MyNode<K>
+public class MyNode<K> implements INode<K>
 {
-    private MyNode next;
+    private MyNode<K> next;
     private K key;
 
     public MyNode(K key)
@@ -11,13 +11,23 @@ public class MyNode<K>
         this.next = null;
     }
 
-    public MyNode getNext()
+    public K getKey()
+    {
+        return key;
+    }
+
+    public void setKey(K key)
+    {
+        this.key = key;
+    }
+
+    public INode getNext()
     {
         return next;
     }
 
-    public void setNext(MyNode next)
+    public void setNext(INode next)
     {
-        this.next = next;
+        this.next = (MyNode<K>) next;
     }
 }
