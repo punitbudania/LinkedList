@@ -1,6 +1,7 @@
 package com.linkedlist;
 
 import com.linkedlist.MyNode.INode;
+import com.linkedlist.MyNode.MyNode;
 
 public class MyLinkedList
 {
@@ -31,6 +32,23 @@ public class MyLinkedList
         }
     }
 
+    public void append(INode myNode)
+    {
+        if(this.head == null)
+        {
+            this.head = myNode;
+        }
+        if(this.tail == null)
+        {
+            this.tail = myNode;
+        }
+        else
+        {
+            this.tail.setNext(myNode);
+            this.tail = myNode;
+        }
+    }
+
     public void printMyNodes()
     {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
@@ -47,4 +65,6 @@ public class MyLinkedList
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
     }
+
+
 }
