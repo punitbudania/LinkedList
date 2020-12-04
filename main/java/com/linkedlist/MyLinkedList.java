@@ -92,10 +92,28 @@ public class MyLinkedList<K>
         System.out.println(myNodes);
     }
 
-
-    public K search(K key)
+    public String toString()
     {
-        
+        return "MyLinkedListNodes{" + head + '}';
+    }
+
+    public INode<K> search(K key)
+    {
+        if(head == null)
+        {
+            return null;
+        }
+
+        INode<K> tempNode = this.head;
+        while (tempNode != null)
+        {
+            if(tempNode.getKey().equals(key))
+            {
+                return tempNode;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return null;
     }
 }
 
