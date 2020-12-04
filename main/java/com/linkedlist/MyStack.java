@@ -1,5 +1,7 @@
 package com.linkedlist;
 
+import com.linkedlist.MyNode.INode;
+
 public class MyStack
 {
     private final MyLinkedList myLinkedList;
