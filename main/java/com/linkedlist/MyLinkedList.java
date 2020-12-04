@@ -1,12 +1,12 @@
 package com.linkedlist;
 
 import com.linkedlist.MyNode.INode;
-import com.linkedlist.MyNode.MyNode;
 
-public class MyLinkedList
+
+public class MyLinkedList<K>
 {
-    public INode tail;
-    public INode head;
+    public INode<K> tail;
+    public INode<K> head;
 
     public MyLinkedList()
     {
@@ -14,7 +14,7 @@ public class MyLinkedList
         this.tail = null;
     }
 
-    public void add(INode newNode)
+    public void add(INode<K> newNode)
     {
         if(this.tail == null)
         {
@@ -32,7 +32,7 @@ public class MyLinkedList
         }
     }
 
-    public void append(INode myNode)
+    public void append(INode<K> myNode)
     {
         if(this.head == null)
         {
@@ -93,4 +93,26 @@ public class MyLinkedList
     }
 
 
+    public K search(K key)
+    {
+
+    }
 }
+
+/*
+    public void printLinkedList() {
+        StringBuffer myNodes = new StringBuffer("My Nodes: ");
+        INode<K> tempNode = head;
+        while (tempNode.getNext() != null) {
+            myNodes.append(tempNode.getKey());
+            if (!tempNode.getNext().equals(null))
+                myNodes.append("->");
+            tempNode = tempNode.getNext();
+
+        }
+        myNodes.append(tempNode.getKey());
+        System.out.println(myNodes);
+
+    }
+
+ */
