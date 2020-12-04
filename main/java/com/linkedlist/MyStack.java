@@ -28,6 +28,6 @@ public class MyStack
 
     public INode pop()
     {
-
+        return myLinkedList.pop();
     }
 }
