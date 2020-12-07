@@ -58,6 +58,27 @@ public class MyLinkedListTest
     }
 
     @Test
+    public void h()
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myFourthNode);
+        INode a = myLinkedList.search(30);
+        myLinkedList.insert(a,myThirdNode );
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                mySecondNode.getNext().equals(myThirdNode) &&
+                myLinkedList.tail.equals(myFourthNode);
+        Assert.assertTrue(result);
+    }
+
+    /*
+    @Test
     public void givenKey_WhenSearch_ReturnTrueOrFalse()
     {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
@@ -70,4 +91,6 @@ public class MyLinkedListTest
         boolean result = myLinkedList.search(30);
         Assert.assertTrue(result);
     }
+
+     */
 }

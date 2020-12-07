@@ -97,11 +97,11 @@ public class MyLinkedList<K>
         return "MyLinkedListNodes{" + head + '}';
     }
 
-    public boolean search(K key)
+    public INode<K> search(K key)
     {
         if(head == null)
         {
-            return false;
+            return null;
         }
 
         INode<K> tempNode = this.head;
@@ -109,13 +109,13 @@ public class MyLinkedList<K>
         {
             if(tempNode.getKey().equals(key))
             {
-                return true;
+                return tempNode;
             }
             else {
                 tempNode = tempNode.getNext();
             }
         }
-        return false;
+        return null;
     }
 }
 
