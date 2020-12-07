@@ -1,5 +1,6 @@
 package com.linkedlist;
 
+import com.linkedlist.MyNode.INode;
 import com.linkedlist.MyNode.MyMapNode;
 
 import java.util.ArrayList;
@@ -59,5 +60,19 @@ public class MyLinkedHashMap<K, V>
     public String toString()
     {
         return "MyLinkedHashMap List {" + myBucketArray + '}';
+    }
+
+    public INode<K> remove(K key)
+    {
+        int index = getBucketIndex(key);
+        MyLinkedList<K> myLinkedList = this.myBucketArray.get(index);
+        INode<K> tempNode = myLinkedList.head;
+        while(! tempNode.getNext().getKey().equals(key))
+        {
+            tempNode = tempNode.getNext();
+        }
+        INode<K> deleteNode = tempNode.getNext();
+        tempNode.setNext(deleteNode.getNext());
+        return deleteNode;
     }
 }
