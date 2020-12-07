@@ -117,6 +117,18 @@ public class MyLinkedList<K>
         }
         return null;
     }
+
+    public INode<K> delete(K key)
+    {
+        INode<K> tempNode = head;
+        while(! tempNode.getNext().getKey().equals(key))
+        {
+            tempNode = tempNode.getNext();
+        }
+        INode<K> deleteNode = tempNode.getNext();
+        tempNode.setNext(deleteNode.getNext());
+        return deleteNode;
+    }
 }
 
 /*

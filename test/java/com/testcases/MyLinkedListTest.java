@@ -58,7 +58,7 @@ public class MyLinkedListTest
     }
 
     @Test
-    public void h()
+    public void GivenSeq_SearchKey_AddKey_ReturnUpdatedSeq()
     {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
@@ -73,6 +73,27 @@ public class MyLinkedListTest
         boolean result = myLinkedList.head.equals(myFirstNode) &&
                 myLinkedList.head.getNext().equals(mySecondNode) &&
                 mySecondNode.getNext().equals(myThirdNode) &&
+                myLinkedList.tail.equals(myFourthNode);
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void GivenSeq_DeleteKey_ReturnUpdatedSeq()
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.delete(40);
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
                 myLinkedList.tail.equals(myFourthNode);
         Assert.assertTrue(result);
     }
