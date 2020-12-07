@@ -10,7 +10,7 @@ import org.junit.Test;
 public class MyQueueTest
 {
     @Test
-    public void given()
+    public void createAQueueUsingEnqueue()
     {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
@@ -19,6 +19,21 @@ public class MyQueueTest
         myQueue.enqueue(myFirstNode);
         myQueue.enqueue(mySecondNode);
         myQueue.enqueue(myThirdNode);
+        myQueue.printQueue();
+    }
+
+    @Test
+    public void deleteElementUsingDequeue()
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyQueue myQueue = new MyQueue();
+        myQueue.enqueue(myFirstNode);
+        myQueue.enqueue(mySecondNode);
+        myQueue.enqueue(myThirdNode);
+        myQueue.printQueue();
+        myQueue.dequeue();
         myQueue.printQueue();
     }
 }

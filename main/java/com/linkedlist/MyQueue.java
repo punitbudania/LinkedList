@@ -21,4 +21,9 @@ public class MyQueue
     {
         myLinkedList.printMyNodes();
     }
+
+    public void dequeue()
+    {
+        myLinkedList.pop();
+    }
 }
