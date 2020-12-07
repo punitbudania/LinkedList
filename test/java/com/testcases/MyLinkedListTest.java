@@ -98,20 +98,20 @@ public class MyLinkedListTest
         Assert.assertTrue(result);
     }
 
-    /*
     @Test
-    public void givenKey_WhenSearch_ReturnTrueOrFalse()
+    public void sortedLinkedList()
     {
-        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
-        MyNode<Integer> myThirdNode = new MyNode<>(56);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.add(myFirstNode);
-        myLinkedList.add(mySecondNode);
-        myLinkedList.add(myThirdNode);
-        boolean result = myLinkedList.search(30);
-        Assert.assertTrue(result);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.sortList();
+        myLinkedList.printMyNodes();
     }
-
-     */
 }

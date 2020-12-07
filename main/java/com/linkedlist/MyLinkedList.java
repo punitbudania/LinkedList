@@ -3,7 +3,7 @@ package com.linkedlist;
 import com.linkedlist.MyNode.INode;
 
 
-public class MyLinkedList<K>
+public class MyLinkedList<K extends Comparable<K>>
 {
     public INode<K> tail;
     public INode<K> head;
@@ -47,6 +47,7 @@ public class MyLinkedList<K>
             this.tail.setNext(myNode);
             this.tail = myNode;
         }
+
     }
 
     public void insert(INode<K> myNode, INode<K> newNode)
@@ -129,6 +130,44 @@ public class MyLinkedList<K>
         tempNode.setNext(deleteNode.getNext());
         return deleteNode;
     }
+
+    public void sortList()
+    {
+        INode<K> current = head;
+        while (current != null)
+        {
+            INode<K> index = current.getNext();
+            while ( index != null )
+            {
+                if ((current.getKey()).compareTo(index.getKey()) > 0)
+                {
+                    INode<K> temp = null;
+                    temp.setKey(current.getKey());
+                    current.setKey(index.getKey()) ;
+                    index.setKey(temp.getKey());
+                }
+                index = index.getNext();
+            }
+            current = current.getNext();
+        }
+    }
+
+
+        /*
+        INode<K> tempNode = head;
+        while (! tempNode.getNext().getKey().equals(null))
+        {
+            int c = (tempNode.getKey()).compareTo(tempNode.getNext().getKey())
+            if( c < 0)
+            {
+                INode<K> swapNode = tempNode;
+                tempNode = tempNode.getNext();
+                tempNode.getNext() = swapNode;
+            }
+        }
+
+         */
+
 }
 
 /*
