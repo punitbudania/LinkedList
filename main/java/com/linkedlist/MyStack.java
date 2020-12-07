@@ -28,6 +28,12 @@ public class MyStack
 
     public INode pop()
     {
-        return myLinkedList.pop();
+        if (myLinkedList.head == null)
+        {
+            return null;
+        }
+        else {
+            return myLinkedList.pop();
+        }
     }
 }
